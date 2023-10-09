@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "libshared_and_static_export.h": "c"
+    },
+    "cSpell.words": [
+        "LIBSHARED"
+    ]
+}
