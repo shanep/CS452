@@ -1,3 +1,5 @@
+[![CMake on multiple platforms](https://github.com/shanep/c-project-template/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/shanep/c-project-template/actions/workflows/cmake-multi-platform.yml)
+
 # Project
 
 This is a project setup to build a C project using [cmake](https://cmake.org/)
