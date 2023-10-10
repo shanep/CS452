@@ -39,7 +39,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND COVERAGE)
     DEPENDENCIES
       lab
     EXCLUDE
-      "unity"
+      "Unity"
       "tests"
       "${INCLUDE_DIR}/include/*"
   )
@@ -51,4 +51,4 @@ add_subdirectory(app)
 
 ## Add the tests to the build
 add_subdirectory(tests)
-add_subdirectory(unity)
+add_subdirectory(Unity)
