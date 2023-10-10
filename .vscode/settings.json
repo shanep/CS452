@@ -11,4 +11,5 @@
         "srunner",
         "tcase"
     ],
+    "livePreview.defaultPreviewPath": "/build/coverage/index.html",
 }

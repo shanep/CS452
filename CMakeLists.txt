@@ -25,11 +25,22 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
   find_package(Sanitizers)
 endif (CMAKE_BUILD_TYPE STREQUAL "Debug")
 
+## Add code coverage flags for debug build only!
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  set(COVERAGE TRUE)
+  include(CodeCoverage)
+  append_coverage_compiler_flags()
+  setup_target_for_coverage_lcov(
+    NAME coverage
+    EXECUTABLE test-lab
+    DEPENDENCIES
+      lab
+  )
+endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
+
 ## Add the src to the build
 add_subdirectory(src)
 
 ## Add the tests to the build
-enable_testing()
 add_subdirectory(tests)
 add_subdirectory(unity)
-include(CTest)

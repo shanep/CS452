@@ -11,6 +11,7 @@ your package manager before you can continue:
 
 - [readline](https://tiswww.case.edu/php/chet/readline/rltop.html)
 - [pthreads](https://hpc-tutorials.llnl.gov/posix/)
+- [lcov](https://github.com/linux-test-project/lcov)
 
 ## Quick Start
 
@@ -40,6 +41,7 @@ Below is a detailed explication of all the directories and files of this project
 ├── Retrospective.md
 ├── clean.sh
 ├── cmake
+├── run-coverage.sh
 ├── run-leak-check.sh
 ├── run-tests.sh
 ├── setup.sh
@@ -67,6 +69,7 @@ Below is a detailed explication of all the directories and files of this project
 - **cmake** - This directory contains some extra scripts to help setup our project
   in our case we want to use address sanitizer to make sure we don't have memory
   errors in our program
+- **run-coverage.sh** - runs code coverage
 - **run-leak-check.sh** - runs the unit tests with leak check enabled
 - **run-tests.sh** - runs all the unit tests
 - **setup.sh** - Generate the project using cmake!
