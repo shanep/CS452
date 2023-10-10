@@ -1,5 +1,8 @@
-if -d if [ -d "build" ]; then
-    echo "TODO: Run coverage"
-else
-    echo "Run setup first!"
+if [ -d "build" ]; then
+    ./clean.sh
 fi
+
+mkdir -p build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Debug -DCOVERAGE=ON ..
+make coverage

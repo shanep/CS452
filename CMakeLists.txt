@@ -11,6 +11,9 @@ project(lab LANGUAGES C VERSION 0.1)
 set(C_STANDARD 11)
 set(C_STANDARD_REQUIRED ON)
 
+## Options
+option(COVERAGE "Compile for code coverage using lcov")
+
 # control where the static and shared libraries are built so that on windows
 # we don't need to tinker with the path to run the executable
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
@@ -26,7 +29,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 endif (CMAKE_BUILD_TYPE STREQUAL "Debug")
 
 ## Add code coverage flags for debug build only!
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND COVERAGE)
   set(COVERAGE TRUE)
   include(CodeCoverage)
   append_coverage_compiler_flags()
@@ -35,11 +38,16 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     EXECUTABLE test-lab
     DEPENDENCIES
       lab
+    EXCLUDE
+      "unity"
+      "tests"
+      "${INCLUDE_DIR}/include/*"
   )
-endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
+endif(CMAKE_BUILD_TYPE STREQUAL "Debug" AND COVERAGE)
 
 ## Add the src to the build
 add_subdirectory(src)
+add_subdirectory(app)
 
 ## Add the tests to the build
 add_subdirectory(tests)

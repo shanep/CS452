@@ -1,5 +1,5 @@
 /*Do not modify this file*/
-#include "lab.h"
+#include <lab.h>
 
 
 int main(int argc, char** argv)
