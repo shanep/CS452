@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Test",
+            "name": "Debug Unit Test",
             "type": "cppdbg",
             "request": "launch",
             "program":"${workspaceRoot}/build/test-lab",
@@ -14,7 +14,12 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "gdb",
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "linux": {
+                "MIMode": "gdb"
+            },
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -27,19 +32,24 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Cmake: Configure"
+            "preLaunchTask": "CMake: build"
         },
         {
-            "name": "(gdb) Launch test",
+            "name": "Debug Exe",
             "type": "cppdbg",
             "request": "launch",
-            "program":"${workspaceRoot}/build/test-lab",
+            "program":"${workspaceRoot}/build/myprogram",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
+            "externalConsole": true,
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "linux": {
+                "MIMode": "gdb"
+            },
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -51,7 +61,8 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "CMake: build"
         }
     ]
 

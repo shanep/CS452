@@ -25,6 +25,6 @@ endif (CMAKE_BUILD_TYPE STREQUAL "Debug")
 
 ## Check for common packages needed
 find_package(Readline REQUIRED)
-target_link_libraries(lab PRIVATE readline)
+target_link_libraries(lab PRIVATE Readline)
 find_package(Threads REQUIRED)
 target_link_libraries(lab PRIVATE Threads::Threads)
