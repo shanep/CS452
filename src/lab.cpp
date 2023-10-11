@@ -25,8 +25,6 @@ char *getVersion(void)
 {
     char *version = (char*) malloc(MAX_VERSION_STRING);
     snprintf(version,MAX_VERSION_STRING, "%d.%d", lab_VERSION_MAJOR, lab_VERSION_MINOR);
-    void *ptr = malloc(10);
-    UNUSED(ptr);
     return version;
 }
 
