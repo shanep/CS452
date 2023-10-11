@@ -8,6 +8,12 @@ target_include_directories(labstatic PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>)
 
+## Set compiler flags for the library
+target_compile_options(lab PRIVATE
+  "$<$<CXX_COMPILER_ID:MSVC>:/W4;/WX>"
+  "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall;-Wextra;-Werror;-pedantic;>"
+)
+
 include(GenerateExportHeader)
 generate_export_header(lab BASE_NAME libshared_and_static)
 set_target_properties(labstatic PROPERTIES COMPILE_FLAGS -DLIBSHARED_AND_STATIC_STATIC_DEFINE)
