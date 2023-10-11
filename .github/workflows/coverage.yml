@@ -16,7 +16,9 @@ jobs:
           uses: hrishikesh-kadam/setup-lcov@v1
 
         - name: Run Coverage
-          run: ./run-coverage.sh
+          run: |
+            cmake -B build -DCMAKE_BUILD_TYPE=Debug -DCOVERAGE=ON -S .
+            cmake --build build --target coverage
 
         - name: Report code coverage
           uses: zgosalvez/github-actions-report-lcov@v3

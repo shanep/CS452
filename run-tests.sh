@@ -1,7 +1,5 @@
-if [ -d "build" ]; then
-    echo "Configure project or run ./setup.sh first!"
-    exit 1
+if [ ! -d "build" ]; then
+    ./configure-debug-as
 fi
 
-cd build && make
-./test-lab
+cmake --build build && ctest --test-dir build --verbose
