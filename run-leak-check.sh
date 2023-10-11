@@ -3,4 +3,5 @@ if [ ! -d "build" ]; then
 fi
 
 cmake --build build
-ASAN_OPTIONS=detect_leaks=1 ./build/test-lab
+export ASAN_OPTIONS=detect_leaks=1
+./build/test-lab

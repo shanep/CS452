@@ -44,7 +44,7 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
-    - name: Configure CMake
+    - name: Configure
       run: >
         cmake -B ${{ steps.strings.outputs.build-output-dir }}
         -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
@@ -55,9 +55,29 @@ jobs:
     - name: Build
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
 
-    - name: Run Tests
+    - name: Test
       run: ctest --test-dir build --verbose
 
+  leak-check:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configure
+      run: >
+        cmake -B ${{ github.workspace }}/build
+        -DCMAKE_CXX_COMPILER=clang++
+        -DCMAKE_C_COMPILER=clang
+        -DCMAKE_BUILD_TYPE=Debug
+        -DADDRESS_SANITIZER=ON
+        -S ${{ github.workspace }}
+    - name: Build
+      run: cmake --build ${{ github.workspace }}/build --config Debug
+    - name: Set Environment Variables
+      run: |
+        echo "ASAN_OPTIONS=detect_leaks=1" >> "$GITHUB_ENV"
+    - name: Test
+      run: ${{ github.workspace }}/build/test-lab
   coverage:
     needs: build
     uses: ./.github/workflows/coverage-report-lcov.yml
