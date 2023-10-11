@@ -1,5 +1,9 @@
-if -d if [ -d "build" ]; then
-    cd build && make && ASAN_OPTIONS=detect_leaks=1 ./test-lab
-else
-    echo "Run setup first!"
+if [ -d "build" ]; then
+    ./clean.sh
 fi
+
+mkdir -p build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+make
+ASAN_OPTIONS=detect_leaks=1 ./test-lab
