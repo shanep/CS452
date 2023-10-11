@@ -1,4 +1,4 @@
-[![CMake on multiple platforms](https://github.com/shanep/c-project-template/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/shanep/c-project-template/actions/workflows/cmake-multi-platform.yml) [![Code Coverage](https://github.com/shanep/c-project-template/actions/workflows/coverage.yml/badge.svg)](https://github.com/shanep/c-project-template/actions/workflows/coverage.yml)
+[![Test on multiple platforms](https://github.com/shanep/c-project-template/actions/workflows/test-multi-platform.yml/badge.svg)](https://github.com/shanep/c-project-template/actions/workflows/test-multi-platform.yml)[![Code Coverage](https://github.com/shanep/c-project-template/actions/workflows/coverage.yml/badge.svg)](https://github.com/shanep/c-project-template/actions/workflows/coverage.yml)
 
 # Project
 
