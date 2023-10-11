@@ -60,4 +60,4 @@ jobs:
 
   coverage:
     needs: build
-    uses: ./.github/workflows/coverage.yml
+    uses: ./.github/workflows/coverage-report-lcov.yml
