@@ -31,7 +31,7 @@ extern "C"
      *
      * @return char* The version string
      */
-    LIBSHARED_AND_STATIC_EXPORT char* getVersion();
+    LIBSHARED_AND_STATIC_EXPORT char* getVersion(void);
 
     /**
      * @brief Example function that adds two numbers together.

@@ -6,11 +6,14 @@
 #include "lab.h"
 #include <labconfig.h>
 
+#define UNUSED(x) (void)(x)
 
 /*Implementations for functions defined in lab.h*/
 
 int myMain(int argc, char **argv)
 {
+    UNUSED(argc);
+    UNUSED(argv);
     using_history();
     char *line = (char *)NULL;
     line = readline("What is your name?");
@@ -18,7 +21,7 @@ int myMain(int argc, char **argv)
     return 0;
 }
 
-char *getVersion()
+char *getVersion(void)
 {
     char *version = malloc(MAX_VERSION_STRING);
     snprintf(version,MAX_VERSION_STRING, "%d.%d", lab_VERSION_MAJOR, lab_VERSION_MINOR);
