@@ -1,4 +1,4 @@
-name: Code Coverage
+name: Code Coverage (lcov)
 
 on:
   workflow_call:
@@ -9,8 +9,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v3
-          with:
-            submodules: recursive
 
         - name: Setup LCOV
           uses: hrishikesh-kadam/setup-lcov@v1
