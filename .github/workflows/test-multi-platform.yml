@@ -39,7 +39,7 @@ jobs:
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
 
     - name: Run Tests
-      run: ./run_tests.sh
+      run: ./run-tests.sh
 
   coverage:
     needs: build
