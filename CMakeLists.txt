@@ -11,10 +11,8 @@ project(lab LANGUAGES CXX VERSION 0.1)
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (CMAKE_CXX_COMPILER)
-  set(CMAKE_CXX_COMPILER ${CMAKE_CXX_COMPILER})
-endif()
-
+set(CMAKE_CXX_COMPILER ${CMAKE_CXX_COMPILER})
+set(CMAKE_C_COMPILER ${CMAKE_C_COMPILER})
 
 ## Identify debug vs release builds with a postfix
 set(CMAKE_DEBUG_POSTFIX d)
