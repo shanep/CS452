@@ -6,10 +6,6 @@ This is a project setup to build a C project using [cmake](https://cmake.org/)
 and using [unity](https://github.com/ThrowTheSwitch/Unity) unit testing
 framework.
 
-TODO: command line arguments
-TODO: Unit tests
-TODO: Refactored code
-
 ## Dependencies
 
 This project has the following dependencies which need to be installed with
