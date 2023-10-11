@@ -39,8 +39,8 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND COVERAGE)
     DEPENDENCIES
       lab
     EXCLUDE
-      "Unity"
-      "tests"
+      "Unity/*"
+      "tests/*"
       "${INCLUDE_DIR}/include/*"
   )
 endif(CMAKE_BUILD_TYPE STREQUAL "Debug" AND COVERAGE)
