@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Cleaning build files files"
+echo "Cleaning build files"
 rm -rf build
 rm -rf CMakeFiles
 rm -rf CMakeCache.txt

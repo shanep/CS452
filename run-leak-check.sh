@@ -1,5 +1,5 @@
 if [ ! -d "build" ]; then
-    ./configure-debug-as
+    ./configure-sanitize
 fi
 
 cmake --build build

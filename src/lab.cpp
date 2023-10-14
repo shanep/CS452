@@ -32,3 +32,12 @@ int add(int a, int b)
 {
     return a + b;
 }
+
+int* leak(int a)
+{
+  //add a leak1
+  int* rval = (int*) malloc(sizeof(int));
+  rval = (int*)malloc(sizeof(int));
+  *rval = a;
+  return rval;
+}
