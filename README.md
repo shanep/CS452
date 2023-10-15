@@ -17,9 +17,16 @@ your package manager before you can continue:
 
 ## Fedora
 
-Fedora 38+ has google test available as a package. You can install it with `gtest` and
-`gtest-devel`. If google test is not installed locally this project will download it
-dynamically. You will also want to install `libasan` to take advantage of address sanitizers.
+Fedora 38+ has google test available as a package. You can install it with
+`gtest` and `gtest-devel`. If google test is not installed locally this project
+will download it dynamically. You will also want to install `libasan` to take
+advantage of address sanitizers.
+
+Install the following packages on Fedora 38+
+
+- gtest-devel
+- gtest
+- libasan
 
 ## Quick Start
 

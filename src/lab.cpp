@@ -18,6 +18,7 @@ int myMain(int argc, char **argv)
     char *line = (char *)NULL;
     line = readline("What is your name?");
     printf("Hello %s! This is the starter template version: %d.%d\n", line, lab_VERSION_MAJOR, lab_VERSION_MINOR);
+    free(line);
     return 0;
 }
 
@@ -40,4 +41,12 @@ int* leak(int a)
   rval = (int*)malloc(sizeof(int));
   *rval = a;
   return rval;
+}
+
+
+int segfault(void)
+{
+  int *foo = nullptr;
+  int bar = *foo;
+  return bar;
 }

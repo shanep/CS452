@@ -19,7 +19,6 @@ set(CMAKE_DEBUG_POSTFIX d)
 
 ## Options
 option(COVERAGE "Compile for code coverage using lcov" OFF)
-option(ADDRESS_SANITIZER "Add address sanitizer to debug build" OFF)
 
 # control where the static and shared libraries are built so that on windows
 # we don't need to tinker with the path to run the executable
@@ -28,12 +27,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
-
-## Add address sanatizers for debug build only!
-if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND ADDRESS_SANITIZER)
-  set(SANITIZE_ADDRESS TRUE)
-  find_package(Sanitizers)
-endif (CMAKE_BUILD_TYPE STREQUAL "Debug" AND ADDRESS_SANITIZER)
+find_package(Sanitizers)
 
 ## Add the src to the build
 add_subdirectory(src)

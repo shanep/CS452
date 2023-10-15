@@ -15,9 +15,15 @@ TEST(AddTest, PositiveNos)
     ASSERT_EQ(expected, actual);
 }
 
-TEST(LeakTest, leak)
+TEST(LeakTest, asan)
 {
   int *actual = leak(2);
   ASSERT_EQ(2,*actual);
   free(actual);
+}
+
+TEST(SegFaultTest, asan)
+{
+  segfault();
+  FAIL();
 }

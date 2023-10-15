@@ -3,7 +3,7 @@
 #define LAB_H
 #include <stdlib.h>
 #include <stdbool.h>
-#include <libshared_and_static_export.h>
+#include <lab_export.h>
 
 #define MAX_VERSION_STRING 10
 
@@ -22,7 +22,7 @@ extern "C"
    * @param argv The argument array
    * @return The exit code
    */
-  LIBSHARED_AND_STATIC_EXPORT int myMain(int argc, char **argv);
+  LAB_EXPORT int myMain(int argc, char **argv);
 
   /**
    * @brief Returns a string containing the version of the library. This string
@@ -31,7 +31,7 @@ extern "C"
    *
    * @return char* The version string
    */
-  LIBSHARED_AND_STATIC_EXPORT char* getVersion(void);
+  LAB_EXPORT char* getVersion(void);
 
   /**
    * @brief Example function that adds two numbers together.
@@ -40,7 +40,7 @@ extern "C"
    * @param b The second number
    * @return The sum of the two numbers
    */
-  LIBSHARED_AND_STATIC_EXPORT int add(int a, int b);
+  LAB_EXPORT int add(int a, int b);
 
   /**
    * @brief Function that leaks some data!
@@ -48,7 +48,13 @@ extern "C"
    * @param a some number
    * @return a pointer to some memory
    */
-  LIBSHARED_AND_STATIC_EXPORT int* leak(int a);
+  LAB_EXPORT int* leak(int a);
+
+  /**
+   * @brief This function causes a segfault
+   *
+   */
+  LAB_EXPORT int segfault(void);
 
 #ifdef __cplusplus
 } //extern "C"

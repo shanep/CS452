@@ -15,16 +15,10 @@ else()
   FetchContent_MakeAvailable(googletest)
 endif(${GTest_FOUND})
 
+
 add_executable(test-lab test-lab.cpp)
-
-## Link the unit tester to the shared library so we can easily test student
-## submissions against the reference implementation.
 target_link_libraries(test-lab lab GTest::gtest_main)
-
-## Add address sanatizers for debug build only!
-if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND ADDRESS_SANITIZER)
-  add_sanitizers(test-lab)
-endif (CMAKE_BUILD_TYPE STREQUAL "Debug" AND ADDRESS_SANITIZER)
+add_sanitizers(test-lab)
 
 include(GoogleTest)
 gtest_discover_tests(test-lab)
