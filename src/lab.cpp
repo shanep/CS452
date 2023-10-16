@@ -46,7 +46,10 @@ int* leak(int a)
 
 int segfault(void)
 {
-  int *foo = nullptr;
-  int bar = *foo;
-  return bar;
+    //add volatile because clang will optimize out the segfault
+    //gcc doesn't care and keeps it there LOL
+    //msvc at least warns you in the VS IDE that you're dereferencing a null pointer
+    volatile int* foo = nullptr;
+    int bar = *foo;
+    return bar;
 }
