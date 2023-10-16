@@ -27,6 +27,12 @@ Install the following packages on Fedora 38+
 - gtest-devel
 - gtest
 - libasan
+- 
+## Windows
+
+Install [vcpkg](https://vcpkg.io/en/getting-started) and integerate vcpkg 
+
+- readline
 
 ## Quick Start
 

@@ -1,5 +1,5 @@
 ## Look for a local gtest install and download if necessary
-find_package(GTest QUIET)
+find_package(GTest CONFIG QUIET)
 if(${GTest_FOUND})
   message(STATUS "Found local install of gtest")
 else()

@@ -24,6 +24,5 @@ TEST(LeakTest, asan)
 
 TEST(SegFaultTest, asan)
 {
-  segfault();
-  FAIL();
+    ASSERT_DEATH(segfault(), ".*");
 }

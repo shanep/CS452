@@ -22,7 +22,8 @@ find_package(Readline REQUIRED)
 #target_link_libraries(labstatic PUBLIC readline)
 #target_link_libraries(labstatic PUBLIC Threads::Threads)
 
-target_link_libraries(lab PUBLIC readline)
+target_include_directories(lab PUBLIC ${Readline_INCLUDE_DIR})
+target_link_libraries(lab PUBLIC ${Readline_LIBRARY})
 #target_link_libraries(lab PUBLIC Threads::Threads)
 
 add_sanitizers(lab)
