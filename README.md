@@ -27,29 +27,20 @@ Install the following packages on Fedora 38+
 - gtest-devel
 - gtest
 - libasan
-- 
+
 ## Windows
 
-Install [vcpkg](https://vcpkg.io/en/getting-started) and integerate vcpkg 
+Install [vcpkg](https://vcpkg.io/en/getting-started) and integrate vcpkg
 
 - readline
 
 ## Quick Start
 
-Use one of the configure scripts to setup the project.
+This project has a preset file to help build the project. You can list all the
+presets with `cmake --list-presets`. You can then pick one of the presets to
+configure and build as shown below.
 
-- configure - for a default release build
-- configure-coverage - for a code coverage build
-  - run with `make coverage`
-- configure-debug - for a debug build
-- configure-sanitize - for a build linked to address sanitizer
-
-Then change into the build directory `cd build` and run `make` to build the
-project and tests. The program and tests will be located in the build directory.
-The program that will run all your tests that you wrote in `test-lab.cpp` is
-named `test-lab`.
-
-If you run into problems and don't know what when wrong you should run the
-`clean.sh` and start over.
-
-## Notes
+```bash
+cmake --preset x86_x64-ASan
+cmake --build --preset x86_x64-ASan
+```

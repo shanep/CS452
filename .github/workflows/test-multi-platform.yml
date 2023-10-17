@@ -64,15 +64,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Configure
-      run: >
-        cmake -B ${{ github.workspace }}/build
-        -DCMAKE_CXX_COMPILER=clang++
-        -DCMAKE_C_COMPILER=clang
-        -DCMAKE_BUILD_TYPE=Debug
-        -DADDRESS_SANITIZER=ON
-        -S ${{ github.workspace }}
+      run: cmake --preset x86_x64-ASan
     - name: Build
-      run: cmake --build ${{ github.workspace }}/build --config Debug
+      run: cmake --build --preset x86_x64-ASan
     - name: Set Environment Variables
       run: |
         echo "ASAN_OPTIONS=detect_leaks=1" >> "$GITHUB_ENV"

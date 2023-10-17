@@ -1,3 +1,0 @@
-#!/bin/bash
-## Address sanitizer will fault under ptrace
-cmake -B build -DCMAKE_BUILD_TYPE=Debug -DADDRESS_SANITIZER=OFF -S .
