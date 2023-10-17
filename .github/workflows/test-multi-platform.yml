@@ -71,7 +71,7 @@ jobs:
       run: |
         echo "ASAN_OPTIONS=detect_leaks=1" >> "$GITHUB_ENV"
     - name: Test
-      run: ${{ github.workspace }}/build/test-lab
+      run: ctest --preset x86_x64-ASan
   coverage:
     needs: build
     uses: ./.github/workflows/coverage-report-lcov.yml
