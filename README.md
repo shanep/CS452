@@ -2,18 +2,14 @@
 
 # Project
 
-This is a project template using [cmake](https://cmake.org/),
-[googletest](https://github.com/google/googletest), and github actions to run
-tests on multiple platforms.
+Before you can start working on this project you will need to install all the
+required tools and libraries. This project has the following dependencies which
+need to be installed with your system package manager before you can continue.
+Any project specific dependencies will be listed in the [Software Requirement
+Specifications](SRS.md).
 
-## Dependencies
-
-This project has the following dependencies which need to be installed with
-your package manager before you can continue:
-
-- [readline](https://tiswww.case.edu/php/chet/readline/rltop.html)
-- [pthreads](https://hpc-tutorials.llnl.gov/posix/)
-- [lcov](https://github.com/linux-test-project/lcov)
+- [cmake](https://cmake.org/)
+- [googletest](https://github.com/google/googletest)
 
 ## Quick Start
 
@@ -27,53 +23,46 @@ cmake --preset x86_x64-ASan
 cmake --build --preset x86_x64-ASan
 ```
 
+The following workflows are setup. Each workflow will configure build and test.
+The `coverage` target only works on Linux.
+
+```bash
+- cmake --workflow --preset coverage
+- cmake --workflow --preset test
+```
+
 ## Operating Systems Notes
 
-The `coverage` target only works on Linux. Visual Studio Enterprise is required
-if you want code coverage reports on windows.
+This project is configured to build on Linux, Windows and MacOS. The following
+sections will help you install the required dependencies for each operating
+system.
 
-### Fedora
+### Fedora 38+
 
-Fedora 38+ has google test available as a package. You can install it with
-`gtest` and `gtest-devel`. If google test is not installed locally this project
-will download it dynamically. You will also want to install `libasan` to take
-advantage of address sanitizers.
+- sudo dnf group install "Development Tools"
+- sudo dnf install libasan lcov gtest gtest-devel
 
-Install the following packages on Fedora 38+
+### Windows 11+
 
-- gtest-devel
-- gtest
-- libasan
+- Install [vcpkg](https://vcpkg.io/en/getting-started) in `C:\vcpkg`
+- Install [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) Community Edition
 
-### Windows
+Then set the `VCPKG_ROOT` environment variable as shown below.
 
-Install [vcpkg](https://vcpkg.io/en/getting-started) make sure you set the
-`VCPKG_ROOT` to the install location and then install the following packages.
+```cmd
+set VCPKG_ROOT=C:\vcpkg
+```
 
-- .\vcpkg install readline
-- .\vcpkg install gtest
+### MacOS
+
+- Install [homebrew](https://brew.sh/)
+- Install [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
+- xcode-select –install to install Command Line Tools.
+- brew install cmake gtest
 
 ## VSCode Notes
 
-- The VSCode CMake extension (2023-10-17) does not support all the features of
-  cmake presets that this project uses so you will need to add the following to
-  your settings.json file so that the extension does not complain about the
-  new features we are using.`"cmake.allowUnsupportedPresetsVersions": true`
-
-## Workflows
-
-The following workflows are setup to run on github actions.
-
-- cmake --workflow --preset coverage
-- cmake --workflow --preset test
-
-## Address sanitizer
-
-The address sanitizer is enabled by default on the `x86_x64-ASan` preset. There
-are two disabled tests that you can run manually that will trigger faults. This
-is to ensure that the address sanitizer is working correctly.
-
-```bash
-./build/x86_x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests
-./build/x86_x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests
-```
+The VSCode CMake extension (2023-10-17) does not support all the features of
+cmake presets that this project uses so you will need to add the following to
+your settings.json file so that the extension does not complain about the
+new features we are using.`"cmake.allowUnsupportedPresetsVersions": true`
