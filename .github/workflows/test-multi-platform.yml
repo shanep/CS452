@@ -28,6 +28,9 @@ jobs:
             c_compiler: clang
             cpp_compiler: clang++
         exclude:
+          # Leak check and other features are not supported on macOS as of Oct 2023
+          - os: macos-latest
+            build_type: x86_x64-ASan
           - os: macos-latest
             c_compiler: gcc
           - os: macos-latest
