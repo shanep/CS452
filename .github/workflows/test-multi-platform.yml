@@ -44,7 +44,7 @@ jobs:
       id: strings
       shell: bash
       run: |
-        echo "VCPKG_ROOT=$(echo $VCPKG_INSTALLATION_ROOT)" >> "$GITHUB_OUTPUT"
+        echo "VCPKG_ROOT=$(echo $VCPKG_INSTALLATION_ROOT)" >> "$GITHUB_ENV"
     - name: Configure
       run: >
         cmake --preset ${{ matrix.build_type }}
