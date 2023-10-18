@@ -62,4 +62,5 @@ void outOfBounds(void)
     {
         arr[i] = i;
     }
+    UNUSED(arr);
 }

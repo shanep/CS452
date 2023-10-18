@@ -16,13 +16,11 @@ generate_export_header(lab)
 configure_file(labconfig.h.in labconfig.h)
 
 ## Check for common packages needed
-find_package(Readline REQUIRED)
 #find_package(Threads REQUIRED)
 
-
-target_include_directories(lab PUBLIC ${Readline_INCLUDE_DIR})
-target_link_libraries(lab PUBLIC ${Readline_LIBRARY})
-#target_link_libraries(lab PUBLIC Threads::Threads)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(readline REQUIRED IMPORTED_TARGET readline)
+target_link_libraries(lab PRIVATE PkgConfig::readline)
 
 add_sanitizers(lab)
 
