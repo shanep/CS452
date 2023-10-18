@@ -43,8 +43,34 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "SANITIZE_ADDRESS": "ON"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
             }
         },
+        {
+            "name": "x86_x64-ASan",
+            "description": "Debug Configuration With Address Sanitizer (cl.exe)",
+            "inherits": [
+              "base"
+            ],
+            "cacheVariables": {
+              "CMAKE_C_COMPILER": "cl.exe",
+              "CMAKE_CXX_COMPILER": "cl.exe"
+            },
+            "condition": {
+              "type": "equals",
+              "lhs": "${hostSystemName}",
+              "rhs": "Windows"
+            },
+            "environment": {
+              "CFLAGS": "/fsanitize=address",
+              "CXXFLAGS": "/fsanitize=address"
+            }
+          },
+
         {
             "name": "x86_x64-Coverage",
             "description": "Code Coverage with lcov",

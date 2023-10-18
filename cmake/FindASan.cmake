@@ -31,9 +31,6 @@ set(FLAG_CANDIDATES
 
     # Older deprecated flag for ASan
     "-g -faddress-sanitizer"
-
-    # Visual Studio 2019 version 16.9
-    "/fsanitize=address"
 )
 
 
