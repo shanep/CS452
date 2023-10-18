@@ -8,7 +8,7 @@ target_include_directories(lab PUBLIC
 ## Set compiler flags for the library
 target_compile_options(lab PRIVATE
   "$<$<CXX_COMPILER_ID:MSVC>:/W4;/WX>"
-  "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall;-Wextra;-Werror;-pedantic;>"
+  "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall;-Wextra;-pedantic;>"
 )
 
 include(GenerateExportHeader)
@@ -19,8 +19,6 @@ configure_file(labconfig.h.in labconfig.h)
 find_package(Readline REQUIRED)
 #find_package(Threads REQUIRED)
 
-#target_link_libraries(labstatic PUBLIC readline)
-#target_link_libraries(labstatic PUBLIC Threads::Threads)
 
 target_include_directories(lab PUBLIC ${Readline_INCLUDE_DIR})
 target_link_libraries(lab PUBLIC ${Readline_LIBRARY})

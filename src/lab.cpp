@@ -53,3 +53,13 @@ int segfault(void)
     int bar = *foo;
     return bar;
 }
+
+void outOfBounds(void)
+{
+    int arr[5] = {0,1,2,3,4};
+    int i = 0;
+    for(i = 0; i < 6; i++)
+    {
+        arr[i] = i;
+    }
+}

@@ -66,3 +66,14 @@ The following workflows are setup to run on github actions.
 
 - cmake --workflow --preset coverage
 - cmake --workflow --preset test
+
+## Address sanitizer
+
+The address sanitizer is enabled by default on the `x86_x64-ASan` preset. There
+are two disabled tests that you can run manually that will trigger faults. This
+is to ensure that the address sanitizer is working correctly.
+
+```bash
+./build/x86_x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests
+./build/x86_x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests
+```

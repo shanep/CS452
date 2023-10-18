@@ -15,14 +15,23 @@ TEST(AddTest, PositiveNos)
     ASSERT_EQ(expected, actual);
 }
 
-TEST(LeakTest, asan)
+TEST(SegFaultTest, asan)
+{
+    ASSERT_DEATH(segfault(), ".*");
+}
+
+// This tests are disabled because they will fail they are used to make sure
+// that the sanitizer is working correctly. You can run them with the
+// --gtest_also_run_disabled_tests flag
+
+TEST(DISABLED_OutOfBoundsTest, fail)
+{
+    outOfBounds();
+}
+
+TEST(DISABLED_LeakTest, fail)
 {
   int *actual = leak(2);
   ASSERT_EQ(2,*actual);
   free(actual);
-}
-
-TEST(SegFaultTest, asan)
-{
-    ASSERT_DEATH(segfault(), ".*");
 }

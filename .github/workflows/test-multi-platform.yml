@@ -15,7 +15,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, macos-latest]
-        build_type: [Release, Debug]
+        build_type: [x86_x64-Release, x86_x64-Debug, x86_x64-ASan]
         c_compiler: [gcc, clang, cl]
         include:
           - os: ubuntu-latest
@@ -38,40 +38,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set reusable strings
-      id: strings
-      shell: bash
-      run: |
-        echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
-
     - name: Configure
       run: >
-        cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        cmake --preset ${{ matrix.build_type }}
         -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
-        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-        -S ${{ github.workspace }}
 
     - name: Build
-      run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
+      run: cmake --build --preset ${{ matrix.build_type }}
 
     - name: Test
-      run: ctest --test-dir build --verbose
+      run: ctest --preset ${{ matrix.build_type }}
 
-  leak-check:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Configure
-      run: cmake --preset x86_x64-ASan
-    - name: Build
-      run: cmake --build --preset x86_x64-ASan
-    - name: Set Environment Variables
-      run: |
-        echo "ASAN_OPTIONS=detect_leaks=1" >> "$GITHUB_ENV"
-    - name: Test
-      run: ctest --preset x86_x64-ASan
   coverage:
     needs: build
     uses: ./.github/workflows/coverage-report-lcov.yml

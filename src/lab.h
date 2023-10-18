@@ -31,7 +31,7 @@ extern "C"
    *
    * @return char* The version string
    */
-  LAB_EXPORT char* getVersion(void);
+  LAB_EXPORT char *getVersion(void);
 
   /**
    * @brief Example function that adds two numbers together.
@@ -48,7 +48,7 @@ extern "C"
    * @param a some number
    * @return a pointer to some memory
    */
-  LAB_EXPORT int* leak(int a);
+  LAB_EXPORT int *leak(int a);
 
   /**
    * @brief This function causes a segfault
@@ -56,8 +56,14 @@ extern "C"
    */
   LAB_EXPORT int segfault(void);
 
+  /**
+   * @brief This function causes an array out of bounds error
+   *
+   */
+  LAB_EXPORT void outOfBounds(void);
+
 #ifdef __cplusplus
-} //extern "C"
+} // extern "C"
 #endif
 
 #endif
