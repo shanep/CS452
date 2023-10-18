@@ -40,7 +40,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
+    - name: Set VCPKG_ROOT env variable
+      id: strings
+      shell: bash
+      run: |
+        echo "VCPKG_ROOT=$(echo $VCPKG_INSTALLATION_ROOT)" >> "$GITHUB_OUTPUT"
     - name: Configure
       run: >
         cmake --preset ${{ matrix.build_type }}
