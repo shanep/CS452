@@ -12,6 +12,11 @@ jobs:
 
         - name: Setup LCOV
           uses: hrishikesh-kadam/setup-lcov@v1
+          
+        - name: Set VCPKG_ROOT env variable
+          shell: bash
+          run: |
+            echo "VCPKG_ROOT=$(echo $VCPKG_INSTALLATION_ROOT)" >> "$GITHUB_ENV"
 
         - name: Run Coverage
           run: cmake --workflow  --preset coverage
