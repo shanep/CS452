@@ -23,8 +23,8 @@ TEST(SegFaultTest, asan)
 // This tests are disabled because they will fail they are used to make sure
 // that the sanitizer is working correctly. You can run them with the
 // --gtest_also_run_disabled_tests flag
-// ./build/x86_x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests
-// ./build/x86_x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests
+// ./out/build/x86_x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests
+// ./out/build/x86_x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests
 
 TEST(DISABLED_OutOfBoundsTest, fail)
 {
