@@ -7,8 +7,7 @@ endif()
 
 project(lab LANGUAGES CXX VERSION 0.1)
 
-# Set up project wide defaults
-# GoogleTest requires at least C++14
+# Set up project wide defaults GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_COMPILER ${CMAKE_CXX_COMPILER})

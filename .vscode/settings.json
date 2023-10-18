@@ -5,11 +5,14 @@
         "unity.h": "c"
     },
     "cSpell.words": [
+        "ASAN",
+        "buildsystems",
         "LIBSHARED",
         "ntests",
         "pthreads",
         "srunner",
-        "tcase"
+        "tcase",
+        "vcpkg"
     ],
     "livePreview.defaultPreviewPath": "/build/coverage/index.html",
 }

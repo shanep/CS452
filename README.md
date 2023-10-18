@@ -15,7 +15,24 @@ your package manager before you can continue:
 - [pthreads](https://hpc-tutorials.llnl.gov/posix/)
 - [lcov](https://github.com/linux-test-project/lcov)
 
-## Fedora
+## Quick Start
+
+Once all the dependencies are installed you can build the project with cmake.
+This project has a preset file to help build the project. You can list all the
+presets with `cmake --list-presets`. You can get started right away with the
+Address Sanitizer build as shown below.
+
+```bash
+cmake --preset x86_x64-ASan
+cmake --build --preset x86_x64-ASan
+```
+
+## Operating Systems Notes
+
+The `coverage` target only works on Linux. Visual Studio Enterprise is required
+if you want code coverage reports on windows.
+
+### Fedora
 
 Fedora 38+ has google test available as a package. You can install it with
 `gtest` and `gtest-devel`. If google test is not installed locally this project
@@ -28,19 +45,24 @@ Install the following packages on Fedora 38+
 - gtest
 - libasan
 
-## Windows
+### Windows
 
-Install [vcpkg](https://vcpkg.io/en/getting-started) and integrate vcpkg
+Install [vcpkg](https://vcpkg.io/en/getting-started) make sure you set the
+`VCPKG_ROOT` to the install location and then install the following packages.
 
-- readline
+- .\vcpkg install readline
+- .\vcpkg install gtest
 
-## Quick Start
+## VSCode Notes
 
-This project has a preset file to help build the project. You can list all the
-presets with `cmake --list-presets`. You can then pick one of the presets to
-configure and build as shown below.
+- The VSCode CMake extension (2023-10-17) does not support all the features of
+  cmake presets that this project uses so you will need to add the following to
+  your settings.json file so that the extension does not complain about the
+  new features we are using.`"cmake.allowUnsupportedPresetsVersions": true`
 
-```bash
-cmake --preset x86_x64-ASan
-cmake --build --preset x86_x64-ASan
-```
+## Workflows
+
+The following workflows are setup to run on github actions.
+
+- cmake --workflow --preset coverage
+- cmake --workflow --preset test
