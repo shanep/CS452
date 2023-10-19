@@ -19,5 +19,6 @@ add_executable(test-lab test-lab.cpp)
 target_link_libraries(test-lab lab GTest::gtest_main)
 add_sanitizers(test-lab)
 
+
 include(GoogleTest)
 gtest_discover_tests(test-lab)

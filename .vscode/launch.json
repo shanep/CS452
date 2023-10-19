@@ -8,7 +8,7 @@
             "name": "Debug Unit Test",
             "type": "cppdbg",
             "request": "launch",
-            "program":"${workspaceRoot}/build/test-lab",
+            "program":"${workspaceRoot}/out/build/x64-Debug/test-lab",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -31,14 +31,13 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ],
-            "preLaunchTask": "CMake: build"
+            ]
         },
         {
             "name": "Debug Exe",
             "type": "cppdbg",
             "request": "launch",
-            "program":"${workspaceRoot}/build/myprogram",
+            "program":"${workspaceRoot}/out/build/x64-Debug/myprogram",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -61,8 +60,7 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ],
-            "preLaunchTask": "CMake: build"
+            ]
         }
     ]
 

@@ -15,5 +15,4 @@
         "tcase",
         "vcpkg"
     ],
-    "livePreview.defaultPreviewPath": "/build/coverage/index.html",
 }

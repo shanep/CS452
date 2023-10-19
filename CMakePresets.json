@@ -29,6 +29,21 @@
             }
         },
         {
+            "name": "x64-Debug-windows",
+            "description": "Debug Configuration",
+            "inherits": [
+                "base","vcpkg"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
             "name": "x64-Release",
             "description": "Release Configuration",
             "inherits": [
@@ -36,6 +51,21 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "x64-Release-windows",
+            "description": "Release Configuration",
+            "inherits": [
+                "base","vcpkg"
+            ],
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
             }
         },
         {
