@@ -34,7 +34,7 @@
             }
         },
         {
-            "name": "x64-Debug",
+            "name": "x64-Debug-win32",
             "description": "Debug Configuration",
             "inherits": [
                 "base","vcpkg"
@@ -64,7 +64,7 @@
             }
         },
         {
-            "name": "x64-Release",
+            "name": "x64-Release-win32",
             "description": "Release Configuration",
             "inherits": [
                 "base","vcpkg"
