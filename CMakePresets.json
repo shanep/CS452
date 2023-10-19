@@ -2,20 +2,24 @@
     "version": 6,
     "configurePresets": [
         {
-            "name": "base",
+            "name": "vcpkg",
+            "description": "Configure with vcpkg",
             "hidden": true,
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}",
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": {
                     "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
                     "type": "FILEPATH"
                 }
             }
-
         },
         {
-            "name": "x86_x64-Debug",
+            "name": "base",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "installDir": "${sourceDir}/out/install/${presetName}"
+        },
+        {
+            "name": "x64-Debug",
             "description": "Debug Configuration",
             "inherits": [
                 "base"
@@ -25,7 +29,7 @@
             }
         },
         {
-            "name": "x86_x64-Release",
+            "name": "x64-Release",
             "description": "Release Configuration",
             "inherits": [
                 "base"
@@ -35,7 +39,7 @@
             }
         },
         {
-            "name": "x86_x64-ASan",
+            "name": "x64-ASan",
             "description": "Debug Configuration With Address Sanitizer",
             "inherits": [
                 "base"
@@ -43,36 +47,10 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "SANITIZE_ADDRESS": "ON"
-            },
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Linux"
             }
         },
         {
-            "name": "x86_x64-ASan-MSVC",
-            "description": "Debug Configuration With Address Sanitizer (cl.exe)",
-            "inherits": [
-              "base"
-            ],
-            "cacheVariables": {
-              "CMAKE_C_COMPILER": "cl.exe",
-              "CMAKE_CXX_COMPILER": "cl.exe"
-            },
-            "condition": {
-              "type": "equals",
-              "lhs": "${hostSystemName}",
-              "rhs": "Windows"
-            },
-            "environment": {
-              "CFLAGS": "/fsanitize=address",
-              "CXXFLAGS": "/fsanitize=address"
-            }
-          },
-
-        {
-            "name": "x86_x64-Coverage",
+            "name": "x64-Coverage",
             "description": "Code Coverage with lcov",
             "inherits": [
                 "base"
@@ -82,37 +60,32 @@
                 "COVERAGE": "ON"
             },
             "condition": {
-                "type": "equals",
+                "type": "notEquals",
                 "lhs": "${hostSystemName}",
-                "rhs": "Linux"
+                "rhs": "Windows"
             }
         }
     ],
     "buildPresets": [
         {
-            "name": "x86_x64-Debug",
+            "name": "x64-Debug",
             "description": "Build Debug Configuration",
-            "configurePreset": "x86_x64-Debug"
+            "configurePreset": "x64-Debug"
         },
         {
-            "name": "x86_x64-Release",
+            "name": "x64-Release",
             "description": "Build Release Configuration",
-            "configurePreset": "x86_x64-Release"
+            "configurePreset": "x64-Release"
         },
         {
-            "name": "x86_x64-ASan",
+            "name": "x64-ASan",
             "description": "Build Configuration With Address Sanitizer",
-            "configurePreset": "x86_x64-ASan"
+            "configurePreset": "x64-ASan"
         },
         {
-            "name": "x86_x64-ASan-MSVC",
-            "description": "Build Configuration With Address Sanitizer",
-            "configurePreset": "x86_x64-ASan-MSVC"
-        },
-        {
-            "name": "x86_x64-Coverage",
+            "name": "x64-Coverage",
             "description": "Build Configuration With Coverage",
-            "configurePreset": "x86_x64-Coverage",
+            "configurePreset": "x64-Coverage",
             "targets": [
                 "coverage"
             ]
@@ -120,8 +93,8 @@
     ],
     "testPresets": [
         {
-            "name": "x86_x64-ASan",
-            "configurePreset": "x86_x64-ASan",
+            "name": "x64-ASan",
+            "configurePreset": "x64-ASan",
             "output": {
                 "outputOnFailure": true
             },
@@ -134,16 +107,12 @@
             }
         },
         {
-            "name": "x86_x64-Debug",
-            "configurePreset": "x86_x64-Debug"
+            "name": "x64-Debug",
+            "configurePreset": "x64-Debug"
         },
         {
-            "name": "x86_x64-ASan-MSVC",
-            "configurePreset": "x86_x64-ASan-MSVC"
-        },
-        {
-            "name": "x86_x64-Release",
-            "configurePreset": "x86_x64-Release"
+            "name": "x64-Release",
+            "configurePreset": "x64-Release"
         }
     ],
     "workflowPresets": [
@@ -152,11 +121,11 @@
             "steps": [
                 {
                     "type": "configure",
-                    "name": "x86_x64-Coverage"
+                    "name": "x64-Coverage"
                 },
                 {
                     "type": "build",
-                    "name": "x86_x64-Coverage"
+                    "name": "x64-Coverage"
                 }
             ]
         },
@@ -165,15 +134,15 @@
             "steps": [
                 {
                     "type": "configure",
-                    "name": "x86_x64-ASan"
+                    "name": "x64-ASan"
                 },
                 {
                     "type": "build",
-                    "name": "x86_x64-ASan"
+                    "name": "x64-ASan"
                 },
                 {
                     "type": "test",
-                    "name": "x86_x64-ASan"
+                    "name": "x64-ASan"
                 }
             ]
         }

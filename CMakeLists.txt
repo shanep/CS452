@@ -7,6 +7,11 @@ endif()
 
 project(lab LANGUAGES CXX VERSION 0.1)
 
+# Make sure we are on a systems that is 64 bits
+if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+    message (FATAL_ERROR "Only 64 bit systems are supported")
+endif(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+
 # Set up project wide defaults GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
