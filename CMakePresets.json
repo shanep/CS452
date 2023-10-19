@@ -168,6 +168,14 @@
         {
             "name": "x64-Release",
             "configurePreset": "x64-Release"
+        },
+        {
+            "name": "x64-Debug-win32",
+            "configurePreset": "x64-Debug-win32"
+        },
+        {
+            "name": "x64-Release-win32",
+            "configurePreset": "x64-Release-win32"
         }
     ],
     "workflowPresets": [
