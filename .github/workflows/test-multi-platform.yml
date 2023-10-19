@@ -27,9 +27,15 @@ jobs:
           - os: macos-latest
             c_compiler: clang
             cpp_compiler: clang++
+          - os: windows-latest
+            c_compiler: cl
+            cpp_compiler: cl
+            build_type: x86_x64-ASan-MSVC
         exclude:
           # Leak check and other features are not supported on macOS as of Oct 2023
           - os: macos-latest
+            build_type: x86_x64-ASan
+          - os: windows-latest
             build_type: x86_x64-ASan
           - os: macos-latest
             c_compiler: gcc
