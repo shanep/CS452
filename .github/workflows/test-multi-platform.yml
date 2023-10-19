@@ -39,7 +39,9 @@ jobs:
           - os: windows-latest
             c_compiler: clang
           - os: windows-latest
-            build_type: x64-ASan # ASan is still too new on Windows
+            build_type: x64-ASan
+          - os: macos-latest
+            build_type: x64-ASan
 
 
     steps:

@@ -26,10 +26,15 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
             }
         },
         {
-            "name": "x64-Debug-windows",
+            "name": "x64-Debug",
             "description": "Debug Configuration",
             "inherits": [
                 "base","vcpkg"
@@ -51,10 +56,15 @@
             ],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
             }
         },
         {
-            "name": "x64-Release-windows",
+            "name": "x64-Release",
             "description": "Release Configuration",
             "inherits": [
                 "base","vcpkg"
@@ -77,6 +87,11 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "SANITIZE_ADDRESS": "ON"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
             }
         },
         {
