@@ -120,7 +120,7 @@
         {
             "name": "x64-Debug-win32",
             "description": "Build Debug Configuration",
-            "configurePreset": "x64-Debug"
+            "configurePreset": "x64-Debug-win32"
         },
         {
             "name": "x64-Release",
