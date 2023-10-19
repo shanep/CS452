@@ -118,9 +118,19 @@
             "configurePreset": "x64-Debug"
         },
         {
+            "name": "x64-Debug-win32",
+            "description": "Build Debug Configuration",
+            "configurePreset": "x64-Debug"
+        },
+        {
             "name": "x64-Release",
             "description": "Build Release Configuration",
             "configurePreset": "x64-Release"
+        },
+        {
+            "name": "x64-Release-win32",
+            "description": "Build Release Configuration",
+            "configurePreset": "x64-Release-win32"
         },
         {
             "name": "x64-ASan",
