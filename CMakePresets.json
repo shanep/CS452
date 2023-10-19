@@ -51,7 +51,7 @@
             }
         },
         {
-            "name": "x86_x64-ASan",
+            "name": "x86_x64-ASan-MSVC",
             "description": "Debug Configuration With Address Sanitizer (cl.exe)",
             "inherits": [
               "base"
@@ -105,6 +105,11 @@
             "configurePreset": "x86_x64-ASan"
         },
         {
+            "name": "x86_x64-ASan-MSVC",
+            "description": "Build Configuration With Address Sanitizer",
+            "configurePreset": "x86_x64-ASan-MSVC"
+        },
+        {
             "name": "x86_x64-Coverage",
             "description": "Build Configuration With Coverage",
             "configurePreset": "x86_x64-Coverage",
@@ -131,6 +136,10 @@
         {
             "name": "x86_x64-Debug",
             "configurePreset": "x86_x64-Debug"
+        },
+        {
+            "name": "x86_x64-ASan-MSVC",
+            "configurePreset": "x86_x64-ASan-MSVC"
         },
         {
             "name": "x86_x64-Release",
