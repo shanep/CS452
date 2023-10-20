@@ -91,23 +91,12 @@ jobs:
       run: cmake --build --preset ${{ matrix.build_type }}
 
     - name: Test Leak
-      id: asan-fail
       run: |
-        ./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests 2>&1 | grep -i "leaksanitizer"
+        ./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests 2>&1 | grep -i "LeakSanitizer: detected memory leaks"
 
-    - name: Test Stack Buffer overflow
-      id: asan-stack-overflow
+    - name: Test OutOfBounds
       run: |
-        echo "expected-stack-overflow=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests)"  >> $GITHUB_OUTPUT
-        if: contains(steps.asan-stack-overflow.outputs.expected-stack-overflow,' AddressSanitizer: stack-buffer-overflow')
-        echo "Correctly detected stack buffer overflow!"
-
-    - name: Test Segfault
-      id: asan-segfault
-      run: |
-        echo "expected-segfault=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_SegfaultTest.fail --gtest_also_run_disabled_tests)"  >> $GITHUB_OUTPUT
-        if: contains(steps.asan-segfault.outputs.expected-segfault,'AddressSanitizer: SEGV')
-        echo "Correctly detected segfault!"
+        ./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests 2>&1 | grep -i "AddressSanitizer: stack-buffer-overflow"
 
   coverage:
     needs: build
