@@ -93,21 +93,21 @@ jobs:
     - name: Test Leak
       id: asan-fail
       run: |
-        echo "expected-leak"=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests)
+        echo "expected-leak=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests)"  >> $GITHUB_OUTPUT
         if: contains(steps.asan-fail.outputs.expected-leak,'LeakSanitizer: detected memory leaks')
         echo "Correctly detected leak!"
 
     - name: Test Stack Buffer overflow
       id: asan-stack-overflow
       run: |
-        echo "expected-stack-overflow"=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests)
+        echo "expected-stack-overflow=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests)"  >> $GITHUB_OUTPUT
         if: contains(steps.asan-stack-overflow.outputs.expected-stack-overflow,' AddressSanitizer: stack-buffer-overflow')
         echo "Correctly detected stack buffer overflow!"
 
     - name: Test Segfault
       id: asan-segfault
       run: |
-        echo "expected-segfault"=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_SegfaultTest.fail --gtest_also_run_disabled_tests)
+        echo "expected-segfault=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_SegfaultTest.fail --gtest_also_run_disabled_tests)"  >> $GITHUB_OUTPUT
         if: contains(steps.asan-segfault.outputs.expected-segfault,'AddressSanitizer: SEGV')
         echo "Correctly detected segfault!"
 
