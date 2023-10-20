@@ -10,7 +10,6 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-    if: false
     strategy:
       fail-fast: true
       matrix:
@@ -73,6 +72,7 @@ jobs:
       run: ctest --preset ${{ matrix.build_type }}
 
   asan:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
