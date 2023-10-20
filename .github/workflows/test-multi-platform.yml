@@ -93,7 +93,7 @@ jobs:
     - name: Test Leak
       id: asan-fail
       run: |
-        ./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests) 2> error.txt
+        ./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests 2> error.txt
         echo "expected-leak=$(cat error.txt)"  >> $GITHUB_OUTPUT
         if: contains(steps.asan-fail.outputs.expected-leak,'LeakSanitizer: detected memory leaks')
         echo "Correctly detected leak!"
