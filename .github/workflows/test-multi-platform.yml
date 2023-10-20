@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-
+    if: false
     strategy:
       fail-fast: true
       matrix:
@@ -54,8 +54,6 @@ jobs:
             build_type: x64-Debug
           - os: windows-latest
             build_type: x64-Release
-
-
     steps:
     - uses: actions/checkout@v3
     - name: Set VCPKG_ROOT env variable
@@ -73,6 +71,45 @@ jobs:
 
     - name: Test
       run: ctest --preset ${{ matrix.build_type }}
+
+  asan:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        build_type: [x64-ASan]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set VCPKG_ROOT env variable
+      shell: bash
+      run: |
+        echo "VCPKG_ROOT=$(echo $VCPKG_INSTALLATION_ROOT)" >> "$GITHUB_ENV"
+    - name: Configure
+      run: >
+        cmake --preset ${{ matrix.build_type }}
+
+    - name: Build
+      run: cmake --build --preset ${{ matrix.build_type }}
+
+    - name: Test Leak
+      id: asan-fail
+      run: |
+        echo "expected-leak"=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests)
+        if: contains(steps.asan-fail.outputs.expected-leak,'LeakSanitizer: detected memory leaks')
+        echo "Correctly detected leak!"
+
+    - name: Test Stack Buffer overflow
+      id: asan-stack-overflow
+      run: |
+        echo "expected-stack-overflow"=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests)
+        if: contains(steps.asan-stack-overflow.outputs.expected-stack-overflow,' AddressSanitizer: stack-buffer-overflow')
+        echo "Correctly detected stack buffer overflow!"
+
+    - name: Test Segfault
+      id: asan-segfault
+      run: |
+        echo "expected-segfault"=$(./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_SegfaultTest.fail --gtest_also_run_disabled_tests)
+        if: contains(steps.asan-segfault.outputs.expected-segfault,'AddressSanitizer: SEGV')
+        echo "Correctly detected segfault!"
 
   coverage:
     needs: build

@@ -1,6 +1,6 @@
 # Software Requirement Specifications
 
-**Required OS:** Linux, Windows, MacOS
+**Required OS:** Linux, Windows
 
 This project requires an additional dependency that you will need to install
 with your system package manager before you can continue.
