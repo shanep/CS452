@@ -12,8 +12,6 @@
 
 int myMain(int argc, char **argv)
 {
-    UNUSED(argc);
-    UNUSED(argv);
     using_history();
     char *line = (char *)NULL;
     line = readline("What is your name?");
