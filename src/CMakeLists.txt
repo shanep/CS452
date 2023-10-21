@@ -7,7 +7,7 @@ target_include_directories(lab PUBLIC
 
 ## Set compiler flags for the library
 target_compile_options(lab PRIVATE
-  "$<$<CXX_COMPILER_ID:MSVC>:/W4;/WX>"
+  "$<$<CXX_COMPILER_ID:MSVC>:/W4>"
   "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall;-Wextra;-pedantic;>"
 )
 
