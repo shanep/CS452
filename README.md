@@ -15,9 +15,16 @@ departments lab machines. If you choose to use a different operating system you
 are on your own to figure out how to get the project to build and run. **ALL**
 instructions below assume you are working on the departments lab machines.
 
+This project can be completed in C++ or C. You are in no way required to use C++
+if you do not wish to do so. The textbook, examples, and starter code are all
+written in C. The only C++ dependency is the Google Test Framework. However, we
+are only going to write simple tests and you can easily write those in C. Using
+the advanced features of the Google Test Framework is optional.
+
 ## Task 0 - Pre-reading
 
 - [Grading Rubric](https://shanepanter.com/cs452/grading-rubric.html)
+- [Google Test Framework](http://google.github.io/googletest/primer.html#simple-tests)
 - (optional)[Cross Platform Notes](https://shanepanter.com/cs452/cross-platform.html)
 
 ## Task 1 - Build
