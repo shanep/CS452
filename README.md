@@ -60,10 +60,9 @@ any unit test for private functions you create in `lab.cpp`.
 
 ## Task 4 - Complete the Retrospective
 
-Once you have completed the tests an implementation open the file
-**Retrospective.md** and complete each section that has a TODO label. You will
-need to add your name and email address to the top of the file or your project
-will not be graded.
+Once you have completed everything open the file **Retrospective.md** and
+complete each section that has a TODO label. You will need to add your name and
+email address to the top of the file or your project will not be graded.
 
 ## Task 5 - Add, Commit, Push your code
 
