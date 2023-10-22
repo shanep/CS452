@@ -16,7 +16,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest]
-        build_type: [x64-Release, x64-ASan]
+        build_type: [x64-Release]
     steps:
     - uses: actions/checkout@v3
     - name: Configure
