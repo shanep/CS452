@@ -1,5 +1,5 @@
 ## Configure, build, and test your code on Linux
-name: CI
+name: CI - Student Grader
 
 on:
   push:
