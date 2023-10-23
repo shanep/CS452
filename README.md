@@ -64,10 +64,6 @@ Hello shane! This is the starter template version: 0.1
 You can see the tests in action like this:
 
 ```bash
-$ cmake --test --preset x64-ASan
-CMake Error: Unknown argument --test
-CMake Error: Run 'cmake --help' for all supported options.
-[shanep@fedora:cpp-project-template] (master *=)
 $ ctest --preset x64-ASan
 Test project /home/shanep/repos/cpp-project-template/out/build/x64-ASan
     Start 1: VersionTest.PositiveNos
