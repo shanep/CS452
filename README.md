@@ -1,12 +1,13 @@
 # Overview
 
-This project is divided into 5 tasks. Each task will be explained in detail and
-you are expected to complete each task in order. This project has been tested on
-Linux, Windows, and MacOS using github actions. In _theory_ you could use any
-operating system you wish to develop and test your solution. However, the
-reality of writing native cross platform code is a quagmire of sadness and
-despair. Additionally, supporting 3 operating systems and their respective
-development environments is beyond the capacity of your instructor and GA/TA.
+This project is divided into several tasks. Each task will be explained in
+detail and you are expected to complete each task in order. This project has
+been tested on Linux, Windows, and MacOS using github actions. In _theory_ you
+could use any operating system you wish to develop and test your solution.
+However, the reality of writing native cross platform code is a quagmire of
+sadness and despair. Additionally, supporting 3 operating systems and their
+respective development environments is beyond the capacity of your instructor
+and GA/TA.
 
 Thus, your code will be graded on the departments lab machines, office hours
 with your instructor or TA/GA will be conducted in the departments lab machines,
