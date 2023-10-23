@@ -188,9 +188,9 @@ to implement any code in `lab.cpp` until you have written the tests!
 The `lab.h` file that you downloaded is well documented, your job is to
 implement all the functions defined in that file in `lab.cpp`. You are free to
 create additional **private** functions in `lab.cpp` if you wish but you are not
-allowed to modify `lab.h` in any way. You are also not allowed to modify the
-`main.cpp` file in any way. You do not need to have any unit test for private
-functions you create in `lab.cpp`.
+allowed to add any additional data to `lab.h`. You are also not allowed to
+modify the `main.cpp` file in any way. You do not need to have any unit test for
+private functions you create in `lab.cpp`.
 
 ## Task 5 - Complete the Retrospective
 
@@ -214,9 +214,10 @@ git push
 ## Task 7 - Bonus
 
 As a bonus for those of you who do the work to get everything working on a
-different OS you can claim a bonus of up to 5% of your final project grade.
+different OS you can claim a bonus of up to 5% of your final project grade. Your
+code must configure, build, and run (without errors) on either Windows or MacOS.
 
 ## Task 8 - Extra super bonus
 
-You did the lab in rust! You can claim a bonus of up to 10% of your final project
-grade. You can claim both the bonus tasks if you wish.
+You did the lab in rust! You can claim a bonus of up to 10% of your final
+project grade. You can claim both the bonus tasks if you wish.
