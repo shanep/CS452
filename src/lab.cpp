@@ -10,6 +10,7 @@
 
 /*Implementations for functions defined in lab.h*/
 
+//Delete this sample function before submitting
 int myMain(int argc, char **argv)
 {
     using_history();
@@ -20,18 +21,21 @@ int myMain(int argc, char **argv)
     return 0;
 }
 
-char *getVersion(void)
+//Delete this sample function before submitting
+char *fooVersion(void)
 {
     char *version = (char*) malloc(MAX_VERSION_STRING);
     snprintf(version,MAX_VERSION_STRING, "%d.%d", lab_VERSION_MAJOR, lab_VERSION_MINOR);
     return version;
 }
 
+//Delete this sample function before submitting
 int add(int a, int b)
 {
     return a + b;
 }
 
+//Delete this sample function before submitting
 int* leak(int a)
 {
   //add a leak1
@@ -41,7 +45,7 @@ int* leak(int a)
   return rval;
 }
 
-
+//Delete this sample function before submitting
 int segfault(void)
 {
     //add volatile because clang will optimize out the segfault
@@ -52,6 +56,7 @@ int segfault(void)
     return bar;
 }
 
+//Delete this sample function before submitting
 void outOfBounds(void)
 {
     int arr[5] = {0,1,2,3,4};

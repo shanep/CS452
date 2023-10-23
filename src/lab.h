@@ -1,4 +1,6 @@
-/*Do NOT modify this file! */
+/*
+*TODO: You must replace this header file with what is posted on the class website!
+*/
 #ifndef LAB_H
 #define LAB_H
 #include <stdlib.h>
@@ -31,7 +33,7 @@ extern "C"
    *
    * @return char* The version string
    */
-  LAB_EXPORT char *getVersion(void);
+  LAB_EXPORT char *fooVersion(void);
 
   /**
    * @brief Example function that adds two numbers together.
