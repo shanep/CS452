@@ -179,6 +179,14 @@ it is a very powerful tool for writing high quality code. You may have to stub
 out some functions in `lab.cpp` to get the tests to compile but resist the urge
 to implement any code in `lab.cpp` until you have written the tests!
 
+You can run your tests like this:
+
+```bash
+cmake --preset x64-ASan
+cmake --build --preset x64-ASan
+ctest --preset x64-ASan
+```
+
 ## Task 4 - Write the code
 
 The `lab.h` file that you downloaded is well documented, your job is to
