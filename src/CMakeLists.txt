@@ -1,4 +1,9 @@
-add_library(lab SHARED lab.cpp lab.h)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/solution.cpp)
+  add_library(lab SHARED solution.cpp lab.h)
+else()
+  add_library(lab SHARED lab.cpp lab.h)
+endif()
+
 
 ## This is needed to find the generated headers
 target_include_directories(lab PUBLIC
@@ -16,8 +21,7 @@ generate_export_header(lab)
 configure_file(labconfig.h.in labconfig.h)
 
 ## Check for common packages needed
-#find_package(Threads REQUIRED)
-
+find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 
 ## On macOS, we need to use libedit instead of readline
@@ -28,6 +32,7 @@ else()
 endif()
 
 target_link_libraries(lab PRIVATE PkgConfig::readline)
+target_link_libraries(lab PRIVATE Threads::Threads)
 add_sanitizers(lab)
 
 if (COVERAGE)

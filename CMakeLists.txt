@@ -40,3 +40,22 @@ add_subdirectory(app)
 ## Add the tests to the build
 enable_testing()
 add_subdirectory(tests)
+
+## Packaging
+include(InstallRequiredSystemLibraries)
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set(CPACK_PACKAGE_VERSION_MAJOR "${lab_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${lab_VERSION_MINOR}")
+set(CPACK_SOURCE_GENERATOR "ZIP")
+set(CPACK_PACKAGE_NAME "starter-code")
+set(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}")
+set(CPACK_SOURCE_IGNORE_FILES
+    /.git
+    /dist
+    /out
+    /.*build.*
+    /\\\\.DS_Store
+    solution\.cpp
+    test-solution\.cpp
+)
+include(CPack)

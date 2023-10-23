@@ -15,7 +15,12 @@ else()
 endif(${GTest_FOUND})
 
 
-add_executable(test-lab test-lab.cpp)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/test-solution.cpp)
+  add_executable(test-lab test-solution.cpp)
+else()
+  add_executable(test-lab test-lab.cpp)
+endif()
+
 target_link_libraries(test-lab lab GTest::gtest_main)
 add_sanitizers(test-lab)
 
