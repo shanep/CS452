@@ -24,11 +24,11 @@ instructions below assume you are working on the departments lab machines.
 
 ## Task 1 - Understand Starter Code
 
-This project is setup with a sample `lab.h`, `lab.cpp`, and `test-lab.cpp` file
-to demonstrate how to structure your code and tests. This project template
-includes intentional errors in the code and tests to demonstrate how address
-sanitizer can help you find bugs in your code. Run the following commands to see
-everything in action!
+This project is setup with a sample `src/lab.h`, `src/lab.cpp`, and
+`tests/test-lab.cpp` file to demonstrate how to structure your code and tests.
+This project template includes intentional errors in the code and tests to
+demonstrate how address sanitizer can help you find bugs in your code. Run the
+following commands to see everything in action!
 
 ```bash
 cmake --preset x64-ASan
@@ -144,12 +144,16 @@ skip ahead to Task 2, but be warned skipping fun may make you sad 😢.
 
 ## Task 2 - Prepare project
 
-The first thing you need to do is download the header file `lab.h` that was
-provided for you in the project description. Replace the entire contents of
-`src/lab.h` with the contents of the file you downloaded. Then delete the example
-code that is in `src/lab.cpp` and `tests/test-lab.cpp`. You will then have to
-stub out the functions in `lab.cpp` so everything will compile, even though nothing
-is implemented yet. Move to Task 3 once you have everything compiling.
+The first thing you need to do is download all the starter code for this
+project. You will find the link to the starter code as well as additional
+details on [canvas](https://boisestatecanvas.instructure.com).
+
+Each file provided in the started code is intended to replace the file in this
+project with the same name. For example, if the starter code has a file named
+`src/lab.h` . Replace the entire contents of `src/lab.h` in your project. Once
+you have all the starter code in place you will need to stub out minimal
+implementations so everything will compile. Once you have your project compiling
+make a commit and push it to github to mark your progress.
 
 This project has a preset file to help build the project. You can list all the
 presets with `cmake --list-presets`. You can get started right away with the
@@ -163,14 +167,19 @@ cmake --build --preset x64-ASan
 
 ## Task 3 - Write Unit tests
 
-In the **tests** directory is a file named `test-lab.cpp`. Make sure and delete
-all the example tests before you start to add your own. You will need to
-write at least 1 test for each function defined in `lab.h`. Each test will fail
-until you implement the function in `lab.cpp`. This approach is called [Test
-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) and
-it is a very powerful tool for writing high quality code. You may have to stub
-out some functions in `lab.cpp` to get the tests to compile but resist the urge
-to implement any code in `lab.cpp` until you have written the tests!
+The starter code included a base set of tests to help guide you to the correct
+solution. Using the existing tests as a guide you need to think of some cases
+that are not covered by the existing tests and write some additional tests. At
+this point the tests should fail, thats ok because you have not written any code
+yet, in the next task you will write the code to make the tests pass. This
+approach is called [Test Driven
+Development](https://en.wikipedia.org/wiki/Test-driven_development) and it is a
+very powerful tool for writing high quality code.
+
+At a minimum try to add at least 1 test for each function defined in
+`src/lab.h`. You may come back and add more tests later when you start working
+on the next task. Writing tests first helps you think about what the functions
+should do before you jump into writing the code.
 
 You can run your tests like this:
 
@@ -182,12 +191,12 @@ ctest --preset x64-ASan
 
 ## Task 4 - Write the code
 
-The `lab.h` file that you downloaded is well documented, your job is to
-implement all the functions defined in that file in `lab.cpp`. You are free to
-create additional **private** functions in `lab.cpp` if you wish but you are not
-allowed to add any additional data to `lab.h`. You are also not allowed to
-modify the `main.cpp` file in any way. You do not need to have any unit test for
-private functions you create in `lab.cpp`.
+The `src/lab.h` file that you downloaded is well documented, your job is to
+implement all the functions defined in that file in `src/lab.cpp`. You are free
+to create additional **private** functions in `src/lab.cpp` if you wish but you
+are not allowed to add any additional data or modify `src/lab.h`. You are also
+not allowed to modify the `app/main.cpp` file in any way. You do not need to
+have any unit test for private functions you create in `src/lab.cpp`.
 
 ## Task 5 - Complete the Retrospective
 
@@ -195,7 +204,12 @@ Once you have completed everything open the file **Retrospective.md** and
 complete each section that has a TODO label. You will need to add your name and
 email address to the top of the file or your project will not be graded.
 
-## Task 6 - Add, Commit, Push your code
+## Task 6 - student.toml
+
+The last thing you need to do is update the `student.toml` file with your name
+and Boise State email address.
+
+## Task 7 - Add, Commit, Push your code
 
 Once you are finished you need to make sure that you have pushed all your code
 to GitHub for grading! You can do this by running the following commands in the
@@ -208,13 +222,14 @@ git commit -m "My project is finished"
 git push
 ```
 
-## Task 7 - Bonus
+## Task 8 - Bonus
 
-As a bonus for those of you who do the work to get everything working on a
-different OS you can claim a bonus of up to 5% of your final project grade. Your
-code must configure, build, and run (without errors) on either Windows or MacOS.
+As a bonus for those of you who do the work to get everything working on a OS
+other than Linux you can claim a bonus of up to 5% of your final project grade.
+Your code must configure, build, and run (without errors) on either Windows or
+MacOS.
 
-## Task 8 - Extra super bonus
+## Task 9 - Extra super bonus
 
 You did the lab in rust! You can claim a bonus of up to 10% of your final
 project grade. You can claim both the bonus tasks if you wish.
