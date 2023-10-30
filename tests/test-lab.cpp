@@ -1,7 +1,7 @@
 #include <lab.h>
 #include <gtest/gtest.h>
 
-//Delete this test before submitting
+// Delete this test before submitting
 TEST(VersionTest, PositiveNos)
 {
     char *version = fooVersion();
@@ -9,7 +9,7 @@ TEST(VersionTest, PositiveNos)
     free(version);
 }
 
-//Delete this test before submitting
+// Delete this test before submitting
 TEST(AddTest, PositiveNos)
 {
     int actual = add(1, 1);
@@ -17,7 +17,7 @@ TEST(AddTest, PositiveNos)
     ASSERT_EQ(expected, actual);
 }
 
-//Delete this test before submitting
+// Delete this test before submitting
 TEST(SegFaultTest, asan)
 {
     ASSERT_DEATH(segfault(), ".*");
@@ -28,15 +28,23 @@ TEST(SegFaultTest, asan)
 // --gtest_also_run_disabled_tests flag
 // ./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_OutOfBoundsTest.fail --gtest_also_run_disabled_tests
 // ./out/build/x64-ASan/test-lab --gtest_filter=DISABLED_LeakTest.fail --gtest_also_run_disabled_tests
-//Delete this test before submitting
+// Delete this test before submitting
 TEST(DISABLED_OutOfBoundsTest, fail)
 {
     outOfBounds();
 }
-//Delete this test before submitting
+// Delete this test before submitting
 TEST(DISABLED_LeakTest, fail)
 {
-  int *actual = leak(2);
-  ASSERT_EQ(2,*actual);
-  free(actual);
+    int *actual = leak(2);
+    ASSERT_EQ(2, *actual);
+    free(actual);
+}
+
+// Delete this test before submitting
+TEST(DISABLED_TimeoutTest, fail)
+{
+    while (true)
+    {
+    }
 }
