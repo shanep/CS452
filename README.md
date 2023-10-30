@@ -144,9 +144,9 @@ skip ahead to Task 2, but be warned skipping fun may make you sad 😢.
 
 ## Task 2 - Prepare project
 
-The first thing you need to do is download all the starter code for this
-project. You will find the link to the starter code as well as additional
-details on [canvas](https://boisestatecanvas.instructure.com).
+Locate the project you are working on from the [class website](https://shanepanter.com/cs452/projects/),
+and download all the necessary starter code. You can find additional
+details listed in the assignment on [canvas](https://boisestatecanvas.instructure.com).
 
 Each file provided in the started code is intended to replace the file in this
 project with the same name. For example, if the starter code has a file named
