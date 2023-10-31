@@ -9,12 +9,12 @@ sadness and despair. Additionally, supporting 3 operating systems and their
 respective development environments is beyond the capacity of your instructor
 and GA/TA.
 
-Thus, your code will be graded on the departments lab machines, office hours
-with your instructor or TA/GA will be conducted in the departments lab machines,
+Thus, your code will be graded using the same setup as github codespaces, office
+hours with your instructor or TA/GA will be conducted in the github codespaces,
 and all questions about the project will be answered in the context of the
-departments lab machines. If you choose to use a different operating system you
-are on your own to figure out how to get the project to build and run. **ALL**
-instructions below assume you are working on the departments lab machines.
+github codespaces. If you choose to use a different operating system you are on
+your own to figure out how to get the project to build and run. **ALL**
+instructions below assume you are working on the github codespaces.
 
 ## Task 0 - Pre-reading
 
