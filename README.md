@@ -7,20 +7,31 @@ could use any operating system you wish to develop and test your solution.
 However, the reality of writing native cross platform code is a quagmire of
 sadness and despair. Additionally, supporting 3 operating systems and their
 respective development environments is beyond the capacity of your instructor
-and GA/TA.
+and GA/TA. This project is configured for [VSCode](https://code.visualstudio.com/)
+and should work out of the box with [Github Codespaces](https://github.com/features/codespaces).
 
-Thus, your code will be graded using the same setup as github codespaces, office
-hours with your instructor or TA/GA will be conducted in the github codespaces,
-and all questions about the project will be answered in the context of the
-github codespaces. If you choose to use a different operating system you are on
-your own to figure out how to get the project to build and run. **ALL**
-instructions below assume you are working on the github codespaces.
+Students get a free [Github Pro](https://education.github.com/pack) account as
+long as you sign up with your Boise State email address. This will allow you to
+use Github Codespaces for free in this class. If you run out of free hours on
+codespaces you can use the CS department lab machines to complete the project.
+You are NOT required to pay for a Github Pro account to complete this project.
+
+You code will be graded using the same setup as github codespaces, office hours
+with your instructor or TA/GA will be conducted in the github codespaces, and
+all questions about the project will be answered in the context of the github
+codespaces.  **ALL** instructions below assume you are working on the github
+codespaces.
+
+**NOTE:** While students are encouraged to setup their own machine to work on
+the project, the instructor and TA/GA will not be able to provide any support
+for personal machines. The only supported environment is github codespaces or
+the CS department lab machines.
 
 ## Task 0 - Pre-reading
 
 - [Grading Rubric](https://shanepanter.com/cs452/grading-rubric.html)
 - [Google Test Framework](http://google.github.io/googletest/primer.html#simple-tests)
-- (optional)[Cross Platform Notes](https://shanepanter.com/cs452/cross-platform.html)
+- (optional)[Developing Cross Platform](https://shanepanter.com/cs452/cross-platform.html)
 
 ## Task 1 - Understand Starter Code
 
