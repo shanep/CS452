@@ -22,11 +22,19 @@ configure_file(labconfig.h.in labconfig.h)
 
 ## Check for common packages needed
 find_package(Threads REQUIRED)
-find_package(Readline REQUIRED)
-
-
-target_link_libraries(lab PRIVATE readline)
 target_link_libraries(lab PRIVATE Threads::Threads)
+
+
+if (WIN32)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(readline REQUIRED IMPORTED_TARGET readline)
+    target_link_libraries(main PRIVATE PkgConfig::readline)
+else()
+  find_package(Readline REQUIRED)
+  target_link_libraries(lab PRIVATE readline)
+endif(WIN32)
+
+
 add_sanitizers(lab)
 
 if (COVERAGE)
