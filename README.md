@@ -19,7 +19,7 @@ You are NOT required to pay for a Github Pro account to complete this project.
 You code will be graded using the same setup as github codespaces, office hours
 with your instructor or TA/GA will be conducted in the github codespaces, and
 all questions about the project will be answered in the context of the github
-codespaces.  **ALL** instructions below assume you are working on the github
+codespaces.  **ALL** instructions below assume you are working in github
 codespaces.
 
 **NOTE:** While students are encouraged to setup their own machine to work on
