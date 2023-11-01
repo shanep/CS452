@@ -22,13 +22,14 @@ configure_file(labconfig.h.in labconfig.h)
 
 ## Check for common packages needed
 find_package(Threads REQUIRED)
-find_package(PkgConfig REQUIRED)
+
 
 ## On macOS, we need to use libedit instead of readline
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+  find_package(PkgConfig REQUIRED)
   pkg_check_modules(readline REQUIRED IMPORTED_TARGET libedit)
 else()
-  pkg_check_modules(readline REQUIRED IMPORTED_TARGET readline)
+  find_package(readline REQUIRED)
 endif()
 
 target_link_libraries(lab PRIVATE PkgConfig::readline)
