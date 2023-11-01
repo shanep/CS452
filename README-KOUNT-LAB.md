@@ -4,6 +4,8 @@ If you are working in the Kount Lab you will need to follow these instructions
 to get setup. If you are working on your own machine or in github codespaces
 follow the instructions in the [README.md](README.md) file.
 
+## Configuring your project
+
 Run the `debug.sh` script from the terminal to generate the build files for your
 project. Note that your output will be slightly different than what is shown
 below because cmake configures the build system specific to the system that it
@@ -32,6 +34,8 @@ $ ./debug.sh
 -- Build files have been written to: /Users/shane/repos/cpp-project-template/build
 ```
 
+## Compiling the program
+
 After you have run `debug.sh` you can `cd` into the build directory and compile
 the program and then run the example tests.
 
@@ -43,6 +47,8 @@ Scanning dependencies of target lab
 ...
 [100%] Built target gmock_main
 ```
+
+## Running the tests
 
 You can run the test program by running `make test` from the build directory.
 
@@ -58,4 +64,12 @@ Test project /home/ShanePanter/starter-code-test/os-starter/build
 Total Test time (real) =   0.38 sec
 [shanepanter@onyx build]$ ./myprogram
 Function go called by main version: 0.1
+```
+
+## Running the program
+
+```bash
+$ ./myprogram
+What is your name?shane
+Hello shane! This is the starter template version: 0.1
 ```
