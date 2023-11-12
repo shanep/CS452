@@ -29,6 +29,12 @@ cmake --build --preset x64-ASan
 ctest --preset x64-ASan
 ```
 
+## Important Links
+
+- [Project Details](https://shanepanter.com/cs452/)
+- [Grading Rubric](https://shanepanter.com/cs452/grading-rubric.html)
+- [Google Test Framework](http://google.github.io/googletest/primer.html#simple-tests)
+
 ## Project Tasks
 
 TODO: Add a description of the project tasks here.
