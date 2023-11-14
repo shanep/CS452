@@ -1,0 +1,6 @@
+preset = "x64-ASan"
+clean = "clean.sh"
+test = "./out/build/x64-ASan/test-lab"
+coverage_build = "x64-Coverage"
+coverage = "./out/build/x64-Coverage/coverage.info"
+shell = "bash"
