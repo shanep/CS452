@@ -1,0 +1,6 @@
+preset = "x64-Release-win32"
+clean = "clean.ps1"
+test = "./out/build/x64-Release-win32/test-lab"
+coverage_build = ""
+coverage = ""
+shell = "powershell"
