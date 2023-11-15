@@ -1,6 +1,23 @@
+[linux]
 preset = "x64-ASan"
 clean = "clean.sh"
 test = "./out/build/x64-ASan/test-lab"
 coverage_build = "x64-Coverage"
-coverage = "./out/build/x64-Coverage/coverage.info"
+coverage = "out/build/x64-Coverage/coverage.info"
 shell = "bash"
+
+[macos]
+preset = "x64-Release"
+clean = "clean.sh"
+test = "./out/build/x64-Release/test-lab"
+coverage_build = "x64-Coverage"
+coverage = "out/build/x64-Coverage/coverage.info"
+shell = "bash"
+
+[windows]
+preset = "x64-Release-win32"
+clean = "clean.ps1"
+test = "./out/build/x64-Release-win32/test-lab"
+coverage_build = ""
+coverage = ""
+shell = "powershell"
