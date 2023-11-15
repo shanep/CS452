@@ -1,7 +1,6 @@
 # Retrospective
 
-- name: TODO
-- email: TODO
+Fill out the [student.toml](student.toml) file. with your information.
 
 ## Experience
 
