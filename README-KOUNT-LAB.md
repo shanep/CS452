@@ -13,9 +13,10 @@ is running on.
 
 ```bash
 $ ./debug.sh
--- The CXX compiler identification is AppleClang 15.0.0.15000040
+-- The CXX compiler identification is GNU 13.2.1
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
@@ -27,11 +28,12 @@ $ ./debug.sh
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE
--- Found Readline:
+-- Found Readline: /usr/include
 -- Found local install of gtest
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/shane/repos/cpp-project-template/build
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/shanep/repos/yaag/test_repos/cpp-project-template/out/build/x64-Debug
+[shanep@fedora:cpp-project-template] ((master) *%)
 ```
 
 ## Compiling the program
@@ -40,8 +42,8 @@ After you have run `debug.sh` you can `cd` into the build directory and compile
 the program and then run the example tests.
 
 ```bash
-[shanepanter@onyx os-starter]$ cd build/
-[shanepanter@onyx build]$ make
+$ cd out/build/x64-Debug
+$ make
 Scanning dependencies of target lab
 [  7%] Building CXX object src/CMakeFiles/lab.dir/lab.cpp.o
 ...
@@ -53,7 +55,7 @@ Scanning dependencies of target lab
 You can run the test program by running `make test` from the build directory.
 
 ```bash
-[shanepanter@onyx build]$ make test
+$ make test
 Running tests...
 Test project /home/ShanePanter/starter-code-test/os-starter/build
     Start 1: AddTest.Positive

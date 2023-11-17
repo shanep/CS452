@@ -37,7 +37,10 @@ ctest --preset x64-ASan
 
 ## Project Tasks
 
-TODO: Add a description of the project tasks here.
+Read the project details (linked above) to get a general understanding of the
+project. Then open the file [src/lab.h](./src/lab.h) and read all the comments
+that have been added to the file. You will need to implement all the functions
+defined in `lab.h` in the file [src/lab.cpp](./src/lab.cpp).
 
 ## Final Task Preparing your project for grading
 
