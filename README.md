@@ -4,8 +4,7 @@ Steps to configure, build, run, and test the project, if you are working in the
 CS Lab follow the instructions listed in the
 [README-KOUNT-LAB.md](README-KOUNT-LAB.md) document instead.
 
-- Configure the project. You can list all the presets with `cmake
-   --list-presets`. We will use the Address Sanitizer build as shown below.
+- Configure the project.
 
 ```bash
 cmake --preset x64-ASan
@@ -28,6 +27,8 @@ cmake --build --preset x64-ASan
 ```bash
 ctest --preset x64-ASan
 ```
+
+- There are other build presets available which you can list with `cmake --list-presets`.
 
 ## Important Links
 
