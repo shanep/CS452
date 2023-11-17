@@ -1,8 +1,8 @@
 # Overview
 
 Steps to configure, build, run, and test the project, if you are working in the
-CS Lab follow the instructions listed in the [README-KOUNT-LAB.md](README-KOUNT-LAB.md)
-document instead.
+CS Lab follow the instructions listed in the
+[README-KOUNT-LAB.md](README-KOUNT-LAB.md) document instead.
 
 - Configure the project. You can list all the presets with `cmake
    --list-presets`. We will use the Address Sanitizer build as shown below.
@@ -31,54 +31,12 @@ ctest --preset x64-ASan
 
 ## Important Links
 
-- [Project Details](https://shanepanter.com/cs452/)
-- [Grading Rubric](https://shanepanter.com/cs452/grading-rubric.html)
+- [Course Projects](https://shanepanter.com/cs452/projects/)
 - [Google Test Framework](http://google.github.io/googletest/primer.html#simple-tests)
 
-## Project Tasks
+## Project Submission Checklist
 
-Read the project details (linked above) to get a general understanding of the
-project. Then open the file [src/lab.h](./src/lab.h) and read all the comments
-that have been added to the file. You will need to implement all the functions
-defined in `lab.h` in the file [src/lab.cpp](./src/lab.cpp).
-
-## Final Task Preparing your project for grading
-
-Read the [grading rubric](https://shanepanter.com/cs452/grading-rubric.html)
-and make sure you meet all the requirements.
-
-### Complete the Retrospective
-
-Once you have completed everything open the file **Retrospective.md** and
-complete each section that has a TODO label. You will need to add your name and
-email address to the top of the file or your project will not be graded.
-
-### Update student.toml
-
-Update update the `student.toml` file with your name and Boise State email
-address.
-
-### Add, Commit, Push your code
-
-Once you are finished you need to make sure that you have pushed all your code
-to GitHub for grading! You can do this by running the following commands in the
-root of your project directory. You can run `git status` to see what files have
-changed since the last commit.
-
-```bash
-git add .
-git commit -m "My project is finished"
-git push
-```
-
-### Bonus
-
-As a bonus for those of you who do the work to get everything working on at
-least one other operating system other than Linux.  You can claim a bonus of up
-to 5% of your final project grade. Your code must configure, build, and run
-(without errors) on either Windows or MacOS.
-
-### Extra super bonus
-
-You did the lab in [rust](https://www.rust-lang.org/)! You can claim a bonus of up to 10% of your final
-project grade. You can claim both the bonus tasks if you wish.
+- Review the [Grading Rubric](https://shanepanter.com/cs452/projects/grading-rubric.html)
+- Make Sure and complete the [Retrospective](Retrospective.md)
+- Update the [student.toml](student.toml) file with your information
+- Ensure that you have pushed all your code to GitHub
