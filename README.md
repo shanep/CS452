@@ -63,3 +63,5 @@ plugin to view the report.
 - Make Sure and complete the [Retrospective](Retrospective.md)
 - Update the [student.toml](student.toml) file with your information
 - Ensure that you have pushed all your code to GitHub
+- Log into [canvas](https://canvas.boisestate.edu/) find the assignment and
+  submit your github URL for credit.
