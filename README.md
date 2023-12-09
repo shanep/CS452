@@ -1,12 +1,12 @@
-# Overview
+# Project
 
-Steps to configure, build, run, and test the project, if you are working in the
-CS Lab follow the instructions listed in the
-[README-KOUNT-LAB.md](README-KOUNT-LAB.md) document instead.
+Steps to configure, build, run, and test the project.
 
 ## Important Links
 
+- [Projects](https://shanepanter.com/cs452/projects/)
 - [Google Test Framework](http://google.github.io/googletest/primer.html#simple-tests)
+- [Working in the Kount Lab](README-KOUNT-LAB.md)
 
 ## Building
 
