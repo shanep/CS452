@@ -4,8 +4,5 @@
         "ms-vscode.cpptools-extension-pack",
         "ms-vscode.cpptools-themes",
         "ms-vscode.cmake-tools",
-        "davidanson.vscode-markdownlint",
-        "streetsidesoftware.code-spell-checker",
-        "ms-azuretools.vscode-docker"
     ]
 }

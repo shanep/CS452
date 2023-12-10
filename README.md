@@ -1,4 +1,4 @@
-# Project
+# CMake Project Template
 
 Steps to configure, build, run, and test the project.
 
@@ -6,7 +6,7 @@ Steps to configure, build, run, and test the project.
 
 - [Projects](https://shanepanter.com/cs452/projects/)
 - [Google Test Framework](http://google.github.io/googletest/primer.html#simple-tests)
-- [Working in the Kount Lab](README-KOUNT-LAB.md)
+- [Working in the Kount Lab](docs/README-KOUNT-LAB.md)
 
 ## Building
 
